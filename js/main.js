@@ -1,22 +1,22 @@
 /* ============================================
    MAIN — Point d'entrée
-   Initialise les modules au chargement de la page.
    ============================================ */
 
 import { siteConfig } from './config.js';
+import { initNavigation } from './components/navigation.js';
+import { initHero } from './sections/hero.js';
 
 const init = () => {
-    console.info(`♥ ${siteConfig.nameWithHeart} — initialisé`);
     document.title = siteConfig.nameWithHeart;
 
-    // Les modules des étapes suivantes seront branchés ici :
-    // initParticles();
-    // initFireworks();
-    // initNavigation();
-    // initTimeline();
-    // initLetters();
-    // initCounter();
-    // initMusic();
+    initNavigation();
+    initHero();
+
+    // Année dans le footer
+    const yearEl = document.getElementById('footerYear');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    console.info(`♥ ${siteConfig.nameWithHeart} — initialisé`);
 };
 
 if (document.readyState === 'loading') {
