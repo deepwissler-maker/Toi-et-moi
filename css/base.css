@@ -1,0 +1,68 @@
+/* ============================================
+   BASE — Styles globaux
+   ============================================ */
+
+body {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body);
+    font-weight: 300;
+    line-height: var(--lh-normal);
+    color: var(--color-text);
+    background: var(--color-bg-deep);
+    background-image:
+        radial-gradient(ellipse at top, rgba(232, 180, 160, 0.06), transparent 60%),
+        radial-gradient(ellipse at bottom, rgba(244, 228, 193, 0.04), transparent 60%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    line-height: var(--lh-tight);
+    letter-spacing: 0.01em;
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+
+p {
+    line-height: var(--lh-loose);
+}
+
+em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--color-gold);
+}
+
+::selection {
+    background: var(--color-accent-soft);
+    color: var(--color-gold);
+}
+
+/* ---------- Focus accessible ---------- */
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+}
+
+/* ---------- Scrollbar discrète ---------- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-deep);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-soft);
+}
