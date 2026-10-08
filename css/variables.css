@@ -1,0 +1,77 @@
+/* ============================================
+   VARIABLES — Source de vérité du design
+   Modifie ici pour tout changer d'un coup.
+   ============================================ */
+
+:root {
+
+    /* ---------- Couleurs ---------- */
+    --color-bg-deep:        #0B0E1A;   /* nuit profonde */
+    --color-bg-soft:        #1A1F35;   /* nuit adoucie */
+    --color-surface:        rgba(255, 255, 255, 0.04);
+    --color-border:         rgba(255, 255, 255, 0.08);
+
+    --color-accent:         #E8B4A0;   /* rose poudré */
+    --color-accent-soft:    rgba(232, 180, 160, 0.15);
+    --color-gold:           #F4E4C1;   /* ivoire doré */
+
+    --color-text:           #EDE9E3;
+    --color-text-muted:     #A8A5B0;
+    --color-text-faint:     #6B6878;
+
+    /* ---------- Typographies ---------- */
+    --font-serif:           'Cormorant Garamond', Georgia, serif;
+    --font-sans:            'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --fs-hero:              clamp(2.5rem, 6vw, 5rem);
+    --fs-h1:                clamp(2rem, 4vw, 3.25rem);
+    --fs-h2:                clamp(1.5rem, 3vw, 2.25rem);
+    --fs-h3:                clamp(1.25rem, 2vw, 1.5rem);
+    --fs-body:              clamp(1rem, 1.1vw, 1.125rem);
+    --fs-small:             0.875rem;
+    --fs-tiny:              0.75rem;
+
+    --lh-tight:             1.15;
+    --lh-normal:            1.5;
+    --lh-loose:             1.75;
+
+    /* ---------- Espacements ---------- */
+    --space-2xs:            0.25rem;
+    --space-xs:             0.5rem;
+    --space-sm:             1rem;
+    --space-md:             1.5rem;
+    --space-lg:             2.5rem;
+    --space-xl:             4rem;
+    --space-2xl:            6rem;
+    --space-3xl:            10rem;
+
+    /* ---------- Conteneurs ---------- */
+    --container-sm:         640px;
+    --container-md:         900px;
+    --container-lg:         1200px;
+
+    /* ---------- Rayons ---------- */
+    --radius-sm:            6px;
+    --radius-md:            12px;
+    --radius-lg:            20px;
+    --radius-full:          9999px;
+
+    /* ---------- Transitions ---------- */
+    --ease-out:             cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-in-out:          cubic-bezier(0.65, 0, 0.35, 1);
+    --duration-fast:        200ms;
+    --duration-base:        400ms;
+    --duration-slow:        700ms;
+    --duration-slower:      1200ms;
+
+    /* ---------- Ombres & lueurs ---------- */
+    --glow-soft:            0 0 40px rgba(232, 180, 160, 0.15);
+    --glow-gold:            0 0 60px rgba(244, 228, 193, 0.12);
+    --shadow-md:            0 10px 40px rgba(0, 0, 0, 0.35);
+
+    /* ---------- Z-index ---------- */
+    --z-base:               1;
+    --z-nav:                100;
+    --z-modal:              1000;
+    --z-particles:          -1;
+}
