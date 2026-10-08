@@ -17,45 +17,99 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components/navigation.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/sections/hero.css">
+    <link rel="stylesheet" href="css/sections/footer.css">
 </head>
 <body>
 
     <!-- ============================================
-         HERO — Étape 2 & 3
+         NAVIGATION — discrète, apparaît après le hero
+         ============================================ -->
+    <header class="nav" id="nav" aria-label="Navigation principale">
+        <a href="#hero" class="nav__brand" aria-label="Retour en haut">
+            Toi &amp; Moi <span class="nav__heart" aria-hidden="true">♥</span>
+        </a>
+
+        <nav class="nav__links" aria-label="Sections du site">
+            <a href="#timeline" class="nav__link">Notre histoire</a>
+            <a href="#letters" class="nav__link">Lettres</a>
+            <a href="#counter" class="nav__link">Notre temps</a>
+        </nav>
+    </header>
+
+    <!-- ============================================
+         HERO
          ============================================ -->
     <section id="hero" class="section section--hero" aria-label="Accueil">
-        <!-- Contenu ajouté à l'étape 2 -->
+        <div class="hero__glow" aria-hidden="true"></div>
+
+        <div class="hero__content container container--sm">
+            <p class="hero__eyebrow">Pour toi</p>
+
+            <h1 class="hero__title">
+                J'ai créé cet endroit<br>
+                <em>juste pour toi.</em>
+            </h1>
+
+            <p class="hero__subtitle">
+                Un petit univers à découvrir, doucement,
+                au fil de notre histoire.
+            </p>
+
+            <div class="hero__actions">
+                <button type="button" class="btn btn--primary" id="enterBtn">
+                    Entrer
+                </button>
+            </div>
+        </div>
+
+        <div class="hero__scroll" aria-hidden="true">
+            <span class="hero__scroll-line"></span>
+        </div>
     </section>
 
     <!-- ============================================
          TIMELINE — Étape 5
          ============================================ -->
     <section id="timeline" class="section section--timeline" aria-label="Notre histoire">
-        <!-- Contenu ajouté à l'étape 5 -->
+        <div class="container">
+            <!-- Contenu ajouté à l'étape 5 -->
+        </div>
     </section>
 
     <!-- ============================================
          LETTRES — Étape 6
          ============================================ -->
     <section id="letters" class="section section--letters" aria-label="Lettres">
-        <!-- Contenu ajouté à l'étape 6 -->
+        <div class="container">
+            <!-- Contenu ajouté à l'étape 6 -->
+        </div>
     </section>
 
     <!-- ============================================
          COMPTEUR — Étape 7
          ============================================ -->
     <section id="counter" class="section section--counter" aria-label="Notre temps">
-        <!-- Contenu ajouté à l'étape 7 -->
+        <div class="container">
+            <!-- Contenu ajouté à l'étape 7 -->
+        </div>
     </section>
 
     <!-- ============================================
-         FOOTER — Étape 2
+         FOOTER
          ============================================ -->
     <footer class="footer" aria-label="Pied de page">
-        <!-- Contenu ajouté à l'étape 2 -->
+        <p class="footer__text">
+            Fait avec <span class="footer__heart" aria-hidden="true">♥</span>
+            pour toi
+        </p>
+        <p class="footer__meta">
+            <span id="footerYear"></span>
+        </p>
     </footer>
 
-    <!-- Point d'entrée JavaScript -->
     <script type="module" src="js/main.js"></script>
 
 </body>
