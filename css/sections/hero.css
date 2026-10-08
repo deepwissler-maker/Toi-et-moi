@@ -1,0 +1,122 @@
+/* ============================================
+   HERO — Section d'accueil
+   ============================================ */
+
+.section--hero {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Halo lumineux derrière le texte */
+.hero__glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80vmin;
+    height: 80vmin;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+        circle,
+        rgba(232, 180, 160, 0.10) 0%,
+        rgba(244, 228, 193, 0.05) 30%,
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+/* ---------- Eyebrow ---------- */
+.hero__eyebrow {
+    font-family: var(--font-sans);
+    font-size: var(--fs-tiny);
+    font-weight: 400;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    opacity: 0.85;
+}
+
+/* ---------- Titre ---------- */
+.hero__title {
+    font-family: var(--font-serif);
+    font-size: var(--fs-hero);
+    font-weight: 400;
+    line-height: var(--lh-tight);
+    color: var(--color-text);
+    letter-spacing: -0.01em;
+}
+
+.hero__title em {
+    font-style: italic;
+    color: var(--color-gold);
+}
+
+/* ---------- Sous-titre ---------- */
+.hero__subtitle {
+    font-size: var(--fs-body);
+    color: var(--color-text-muted);
+    max-width: 42ch;
+    line-height: var(--lh-loose);
+}
+
+/* ---------- Actions ---------- */
+.hero__actions {
+    margin-top: var(--space-sm);
+}
+
+/* ---------- Indicateur de scroll ---------- */
+.hero__scroll {
+    position: absolute;
+    bottom: var(--space-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.hero__scroll-line {
+    display: block;
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--color-accent),
+        transparent
+    );
+    opacity: 0.6;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+    .hero__content {
+        gap: var(--space-sm);
+        padding: 0 var(--space-sm);
+    }
+
+    .hero__eyebrow {
+        letter-spacing: 0.3em;
+    }
+
+    .hero__subtitle {
+        font-size: var(--fs-small);
+    }
+
+    .hero__scroll {
+        bottom: var(--space-md);
+    }
+
+    .hero__scroll-line {
+        height: 32px;
+    }
+}
