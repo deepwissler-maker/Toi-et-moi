@@ -7,7 +7,19 @@
     overflow: hidden;
 }
 
-/* Halo lumineux derrière le texte */
+/* ---------- Canvas du ciel + particules ---------- */
+.hero__canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+/* ---------- Halo lumineux derrière le texte ---------- */
 .hero__glow {
     position: absolute;
     top: 50%;
@@ -22,12 +34,13 @@
         transparent 70%
     );
     pointer-events: none;
-    z-index: 0;
+    z-index: 1;
 }
 
+/* ---------- Contenu ---------- */
 .hero__content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     text-align: center;
 
     display: flex;
@@ -81,7 +94,7 @@
     bottom: var(--space-lg);
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1;
+    z-index: 2;
 }
 
 .hero__scroll-line {
@@ -95,6 +108,48 @@
         transparent
     );
     opacity: 0.6;
+    animation: scroll-hint 2.4s var(--ease-in-out) infinite;
+}
+
+@keyframes scroll-hint {
+    0%, 100% { transform: scaleY(1);   opacity: 0.6; }
+    50%      { transform: scaleY(1.4); opacity: 1; }
+}
+
+/* ============================================
+   ANIMATIONS D'ENTRÉE (cascade au chargement)
+   ============================================ */
+
+.animate-on-load {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: hero-appear 900ms var(--ease-out) forwards;
+}
+
+.animate-on-load--1 { animation-delay: 200ms; }
+.animate-on-load--2 { animation-delay: 500ms; }
+.animate-on-load--3 { animation-delay: 900ms; }
+.animate-on-load--4 { animation-delay: 1200ms; }
+.animate-on-load--5 { animation-delay: 1600ms; }
+
+@keyframes hero-appear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- Reduced motion : on coupe tout ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .animate-on-load {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+
+    .hero__scroll-line {
+        animation: none;
+    }
 }
 
 /* ---------- Responsive ---------- */
