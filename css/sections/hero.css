@@ -19,6 +19,16 @@
     -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }
 
+/* ---------- Canvas des feux d'artifice (au-dessus) ---------- */
+.hero__fireworks {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+}
+
 /* ---------- Halo lumineux derrière le texte ---------- */
 .hero__glow {
     position: absolute;
