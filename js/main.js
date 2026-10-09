@@ -4,12 +4,14 @@
 
 import { siteConfig } from './config.js';
 import { initNavigation } from './components/navigation.js';
+import { initParticles } from './components/particles.js';
 import { initHero } from './sections/hero.js';
 
 const init = () => {
     document.title = siteConfig.nameWithHeart;
 
     initNavigation();
+    initParticles();
     initHero();
 
     // Année dans le footer
