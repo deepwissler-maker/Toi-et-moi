@@ -25,7 +25,7 @@
 <body>
 
     <!-- ============================================
-         NAVIGATION — discrète, apparaît après le hero
+         NAVIGATION
          ============================================ -->
     <header class="nav" id="nav" aria-label="Navigation principale">
         <a href="#hero" class="nav__brand" aria-label="Retour en haut">
@@ -43,29 +43,32 @@
          HERO
          ============================================ -->
     <section id="hero" class="section section--hero" aria-label="Accueil">
+
+        <canvas id="skyCanvas" class="hero__canvas" aria-hidden="true"></canvas>
+
         <div class="hero__glow" aria-hidden="true"></div>
 
         <div class="hero__content container container--sm">
-            <p class="hero__eyebrow">Pour toi</p>
+            <p class="hero__eyebrow animate-on-load animate-on-load--1">Pour toi</p>
 
-            <h1 class="hero__title">
+            <h1 class="hero__title animate-on-load animate-on-load--2">
                 J'ai créé cet endroit<br>
                 <em>juste pour toi.</em>
             </h1>
 
-            <p class="hero__subtitle">
+            <p class="hero__subtitle animate-on-load animate-on-load--3">
                 Un petit univers à découvrir, doucement,
                 au fil de notre histoire.
             </p>
 
-            <div class="hero__actions">
+            <div class="hero__actions animate-on-load animate-on-load--4">
                 <button type="button" class="btn btn--primary" id="enterBtn">
                     Entrer
                 </button>
             </div>
         </div>
 
-        <div class="hero__scroll" aria-hidden="true">
+        <div class="hero__scroll animate-on-load animate-on-load--5" aria-hidden="true">
             <span class="hero__scroll-line"></span>
         </div>
     </section>
