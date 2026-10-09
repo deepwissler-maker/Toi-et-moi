@@ -61,3 +61,54 @@
     border-color: var(--color-accent);
     color: var(--color-gold);
 }
+
+/* ---------- Bouton ✨ du footer (easter egg) ---------- */
+.footer__sparkle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: var(--space-md);
+    width: 44px;
+    height: 44px;
+
+    font-size: 1.1rem;
+    line-height: 1;
+
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+
+    cursor: pointer;
+    opacity: 0.4;
+    transition:
+        opacity var(--duration-base) var(--ease-out),
+        transform var(--duration-base) var(--ease-out),
+        border-color var(--duration-base) var(--ease-out),
+        box-shadow var(--duration-base) var(--ease-out);
+}
+
+.footer__sparkle:hover,
+.footer__sparkle:focus-visible {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.05);
+    border-color: var(--color-accent);
+    box-shadow: var(--glow-soft);
+}
+
+.footer__sparkle:active {
+    transform: translateY(0) scale(0.95);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+    .btn {
+        padding: 0.75rem 1.6rem;
+        font-size: var(--fs-tiny);
+    }
+
+    .footer__sparkle {
+        width: 40px;
+        height: 40px;
+    }
+}
