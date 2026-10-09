@@ -1,21 +1,37 @@
 /* ============================================
    HERO
-   Gère le bouton "Entrer" (pour l'instant : scroll doux).
-   Les feux d'artifice viendront à l'étape 4.
+   Gère le bouton "Entrer" :
+   - déclenche les feux d'artifice
+   - scrolle doucement vers la section suivante
    ============================================ */
 
 import { $, on } from '../utils/dom.js';
+import { launchFireworks } from '../components/fireworks.js';
 
 export const initHero = () => {
     const enterBtn = $('#enterBtn');
     if (!enterBtn) return;
 
+    let hasEntered = false;
+
     on(enterBtn, 'click', () => {
-        // Étape 4 : déclenchera les feux d'artifice ici.
-        // Pour l'instant : scroll doux vers la section suivante.
-        const nextSection = $('#timeline');
-        if (nextSection) {
-            nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Feux d'artifice (moyens : 3 fusées)
+        launchFireworks({ intensity: 'medium' });
+
+        // On ne scrolle qu'une fois, et après un léger délai
+        // pour laisser le temps d'admirer les feux.
+        if (!hasEntered) {
+            hasEntered = true;
+
+            setTimeout(() => {
+                const nextSection = $('#timeline');
+                if (nextSection) {
+                    nextSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }, 2200);
         }
     });
 };
