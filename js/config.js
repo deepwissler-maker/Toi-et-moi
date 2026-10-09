@@ -1,39 +1,23 @@
 /* ============================================
-   MAIN — Point d'entrée
+   CONFIG — Paramètres généraux du site
+   Modifie ces valeurs sans toucher au reste.
    ============================================ */
 
-import { siteConfig } from './config.js';
-import { initNavigation } from './components/navigation.js';
-import { initParticles } from './components/particles.js';
-import { initFireworks } from './components/fireworks.js';
-import { initHero } from './sections/hero.js';
+export const siteConfig = {
+    name: 'Toi & Moi',
+    nameWithHeart: 'Toi & Moi ♥',
+    tagline: 'Un endroit créé juste pour toi.',
 
-const init = () => {
-    document.title = siteConfig.nameWithHeart;
+    // Musique — activée par défaut ? (sera branché à l'étape 8)
+    music: {
+        enabledByDefault: false,
+        volume: 0.4,
+        track: 'assets/audio/theme.mp3'
+    },
 
-    initNavigation();
-    initParticles();
-    initFireworks();
-    initHero();
-
-    // Bouton ✨ du footer : relance un feu d'artifice
-    const sparkleBtn = document.getElementById('sparkleBtn');
-    if (sparkleBtn) {
-        sparkleBtn.addEventListener('click', async () => {
-            const { launchFireworks } = await import('./components/fireworks.js');
-            launchFireworks({ intensity: 'high' });
-        });
+    // Particules & feux d'artifice (étapes 3 & 4)
+    effects: {
+        particlesEnabled: true,
+        fireworksEnabled: true
     }
-
-    // Année dans le footer
-    const yearEl = document.getElementById('footerYear');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-    console.info(`♥ ${siteConfig.nameWithHeart} — initialisé`);
 };
-
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-} else {
-    init();
-}
